@@ -14,9 +14,10 @@ class UI {
   paint(data) {
     this.location.textContent = data.name;
     this.desc.textContent = data.weather[0].description;
-    this.string.textContent = `${(9 / 5) *
-      (parseInt(data.main.temp, 10) - 273) +
-      32} F / ${(parseInt(data.main.temp, 10) - 273.15).toFixed(1)} °C`;
+    this.string.textContent = `${(
+      (9 / 5) * (parseInt(data.main.temp, 10) - 273) +
+      32
+    ).toFixed(1)} F / ${(parseInt(data.main.temp, 10) - 273.15).toFixed(1)} °C`;
     this.icon.setAttribute(
       'src',
       `http://openweathermap.org/img/w/${data.weather[0].icon}.png`
